@@ -40,13 +40,19 @@ target 'Runner' do
   pod 'Firebase/Core', '~> 10.25.0'
   pod 'Firebase/Firestore', '~> 10.25.0'
   pod 'GoogleSignIn', '~> 8.0'
-  pod 'GoogleUtilities/Environment', '~> 7.12'
-  pod 'GoogleUtilities/UserDefaults', '~> 7.12'
-  pod 'GoogleUtilities/Logger', '~> 7.12'
-  pod 'GoogleUtilities/Network', '~> 7.12'
-  pod 'GoogleUtilities/Reachability', '~> 7.12'
-  pod 'GoogleUtilities/NSData+zlib', '~> 7.12'
-  pod 'GoogleUtilities/MethodSwizzler', '~> 7.12'
+  pod 'GoogleUtilities/Environment', '~> 8.0'
+  pod 'GoogleUtilities/UserDefaults', '~> 8.0'
+  pod 'GoogleUtilities/Logger', '~> 8.0'
+  pod 'GoogleUtilities/Network', '~> 8.0'
+  pod 'GoogleUtilities/Reachability', '~> 8.0'
+  pod 'GoogleUtilities/NSData+zlib', '~> 8.0'
+  pod 'GoogleUtilities/MethodSwizzler', '~> 8.0'
+
+  # Set deployment target
+  target.build_configurations.each do |config|
+    config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+  end
+end
 end
 
 post_install do |installer|
