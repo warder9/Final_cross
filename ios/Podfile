@@ -32,6 +32,7 @@ flutter_ios_podfile_setup
 target 'Runner' do
   use_frameworks!
   use_modular_headers!
+  platform :ios, '13.0'
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 
@@ -47,11 +48,6 @@ target 'Runner' do
   pod 'GoogleUtilities/Reachability', '~> 8.0'
   pod 'GoogleUtilities/NSData+zlib', '~> 8.0'
   pod 'GoogleUtilities/MethodSwizzler', '~> 8.0'
-
-  # Set deployment target
-  target.build_configurations.each do |config|
-    config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
-  end
 end
 
 post_install do |installer|
@@ -62,12 +58,4 @@ post_install do |installer|
     end
   end
 end
-
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    flutter_additional_ios_build_settings(target)
-    target.build_configurations.each do |config|
-      config.build_settings['ENABLE_BITCODE'] = enable_bitcode
-    end
-  end
 end
