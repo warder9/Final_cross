@@ -41,13 +41,13 @@ target 'Runner' do
   pod 'Firebase/Core', '~> 10.25.0'
   pod 'Firebase/Firestore', '~> 10.25.0'
   pod 'GoogleSignIn', '~> 8.0'
-  pod 'GoogleUtilities/Environment', '~> 8.0'
-  pod 'GoogleUtilities/UserDefaults', '~> 8.0'
-  pod 'GoogleUtilities/Logger', '~> 8.0'
-  pod 'GoogleUtilities/Network', '~> 8.0'
-  pod 'GoogleUtilities/Reachability', '~> 8.0'
-  pod 'GoogleUtilities/NSData+zlib', '~> 8.0'
-  pod 'GoogleUtilities/MethodSwizzler', '~> 8.0'
+  pod 'GoogleUtilities/Environment', '~> 7.11'
+  pod 'GoogleUtilities/UserDefaults', '~> 7.11'
+  pod 'GoogleUtilities/Logger', '~> 7.11'
+  pod 'GoogleUtilities/Network', '~> 7.11'
+  pod 'GoogleUtilities/Reachability', '~> 7.11'
+  pod 'GoogleUtilities/NSData+zlib', '~> 7.11'
+  pod 'GoogleUtilities/MethodSwizzler', '~> 7.11'
 end
 
 post_install do |installer|
