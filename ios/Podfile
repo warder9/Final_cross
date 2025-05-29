@@ -1,3 +1,5 @@
+source 'https://cdn.cocoapods.org/'
+
 platform :ios, '13.0'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
@@ -39,6 +41,12 @@ target 'Runner' do
   pod 'Firebase/Firestore', '~> 10.25.0'
   pod 'GoogleSignIn', '~> 8.0'
   pod 'GoogleUtilities/Environment', '~> 7.12'
+  pod 'GoogleUtilities/UserDefaults', '~> 7.12'
+  pod 'GoogleUtilities/Logger', '~> 7.12'
+  pod 'GoogleUtilities/Network', '~> 7.12'
+  pod 'GoogleUtilities/Reachability', '~> 7.12'
+  pod 'GoogleUtilities/NSData+zlib', '~> 7.12'
+  pod 'GoogleUtilities/MethodSwizzler', '~> 7.12'
 end
 
 post_install do |installer|
