@@ -4,9 +4,6 @@ workflows:
     environment:
       flutter: stable
       xcode: latest
-      ios_signing:
-        provisioning_profile: $PROVISIONING_PROFILE
-        signing_identity: $SIGNING_IDENTITY
     scripts:
       - name: Install dependencies
         script: |
@@ -15,26 +12,11 @@ workflows:
       - name: Build iOS app
         script: |
           flutter build ios --release --no-codesign
-      - name: Export IPA
+      - name: Create IPA
         script: |
-          mkdir -p build/ios/ipa
-          # Create .xcarchive
-          xcodebuild -workspace ios/Runner.xcworkspace -scheme Runner archive -archivePath build/ios/Runner.xcarchive
-          # Export IPA
-          xcodebuild -exportArchive -archivePath build/ios/Runner.xcarchive -exportOptionsPlist ios/exportOptions.plist -exportPath build/ios/ipa
+          flutter build ipa --export-options-plist=ios/exportOptions.plist
     artifacts:
       - build/ios/ipa/*.ipa
       - build/ios/ipa/*.app.dSYM.zip
-    publishing:
-      app_store_connect:
-        api_key: $APP_STORE_CONNECT_API_KEY
-        api_key_id: $APP_STORE_CONNECT_API_KEY_ID
-        api_issuer_id: $APP_STORE_CONNECT_API_ISSUER_ID
-        app_store_id: $APP_STORE_ID
-        team_id: $TEAM_ID
-        team_name: $TEAM_NAME
-        skip_submission: true
-        skip_metadata: true
-        skip_screenshots: true
         skip_metadata: true
         skip_screenshots: true
