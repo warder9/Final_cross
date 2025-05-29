@@ -40,7 +40,7 @@ target 'Runner' do
   pod 'Firebase/Auth', '~> 10.25.0'
   pod 'Firebase/Core', '~> 10.25.0'
   pod 'Firebase/Firestore', '~> 10.25.0'
-  pod 'GoogleSignIn', '~> 8.0'
+  pod 'GoogleSignIn', '~> 7.0'
   pod 'GoogleUtilities/Environment', '~> 7.11'
   pod 'GoogleUtilities/UserDefaults', '~> 7.11'
   pod 'GoogleUtilities/Logger', '~> 7.11'
