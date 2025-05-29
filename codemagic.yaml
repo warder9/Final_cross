@@ -17,4 +17,8 @@ workflows:
           flutter build ipa --export-options-plist=ios/exportOptions.plist
     artifacts:
       - build/ios/ipa/*.ipa
+<<<<<<< HEAD
       - build/ios/ipa/*.app.dSYM.zip
+=======
+      - build/ios/ipa/*.app.dSYM.zip
+>>>>>>> 3bf93e80c64c3ae31418ee7ffbc1df0b2f19a835
