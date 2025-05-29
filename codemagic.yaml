@@ -18,4 +18,3 @@ workflows:
     artifacts:
       - build/ios/ipa/*.ipa
       - build/ios/ipa/*.app.dSYM.zip
-        skip_screenshots: true
